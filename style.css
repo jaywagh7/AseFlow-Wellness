@@ -90,7 +90,6 @@ nav {
 
 .nav__logo img {
   width: 120px;
-  
 }
 
 .nav__links {
@@ -181,9 +180,6 @@ nav {
 
 .nav__logo {
   max-width: 150px;
-  height: 100px; /* Adjust as needed */
-  background: url("Images/logo.png") no-repeat center/contain;
-  background-size: contain;
 }
 
 .nav__links {
