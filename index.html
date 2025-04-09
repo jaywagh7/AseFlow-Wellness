@@ -14,7 +14,7 @@
   <body>
     <nav>
       <div class="nav__logo">
-          <img src="/Images/logo.png" alt="logo" >
+          <a href="#"><img src="../Images/logo.png" alt="logo" ></a>
       </div>
       <ul class="nav__links">
         <li class="link"><a href="#home">Home</a></li>
@@ -228,12 +228,17 @@ Benefits:
   <h2 class="section__header">Get In Touch</h2>
   <p class="section__subheader">Have questions or need more information? Reach out to us anytime!</p>
   
-  <form id="contactForm" class="contact__form">
+  <form id="contactForm" class="contact__form" action="https://api.web3forms.com/submit" method="POST">
+    <!-- Web3Forms Access Key -->
+    <input type="hidden" name="access_key" value="2100ec63-e23e-49f8-8066-605aeb67c458">
+  
     <input type="text" name="name" placeholder="Name" required>
     <input type="email" name="email" placeholder="Email" required>
     <textarea name="message" placeholder="Enter Message" required></textarea>
+  
     <button type="submit" class="btn">Submit</button>
   </form>
+  
 
   <!-- Confirmation Message -->
   <div id="confirmationMessage" style="display: none; color: green; margin-top: 10px;">
@@ -241,7 +246,7 @@ Benefits:
   </div>
 
   <div class="social__links">
-    <a href="#" class="social__icon"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.instagram.com/aseflow.wellness?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social__icon"><i class="fab fa-instagram"></i></a>
     <a href="#" class="social__icon"><i class="fab fa-facebook-f"></i></a>
     <a href="#" class="social__icon"><i class="fab fa-twitter"></i></a>
     <a href="#" class="social__icon"><i class="fa-brands fa-whatsapp"></i></a>
@@ -271,7 +276,7 @@ Benefits:
     <div class="footer__social">
       <h3>Follow Us</h3>
       <div class="social__icons">
-        <a href="#" class="social__icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/aseflow.wellness?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social__icon"><i class="fab fa-instagram"></i></a>
     <a href="#" class="social__icon"><i class="fab fa-facebook-f"></i></a>
     <a href="#" class="social__icon"><i class="fab fa-twitter"></i></a>
     <a href="#" class="social__icon"><i class="fa-brands fa-whatsapp"></i></a>
@@ -287,6 +292,31 @@ Benefits:
    title="Chat with us on WhatsApp">
    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp">
 </a>
+<script>
+  const form = document.getElementById('contactForm');
+  const confirmationMessage = document.getElementById('confirmationMessage');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    if (response.ok) {
+      confirmationMessage.style.display = "block";
+      form.reset();
+    } else {
+      confirmationMessage.innerText = "Oops! Something went wrong.";
+      confirmationMessage.style.color = "red";
+      confirmationMessage.style.display = "block";
+    }
+  });
+</script>
 
   </body>
 </html>
+

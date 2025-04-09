@@ -186,7 +186,7 @@ nav {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 1rem;
 }
 .nav__links li a:hover {
   color: red; /* Change text color to red on hover */
