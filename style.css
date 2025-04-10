@@ -607,8 +607,61 @@ nav {
   color: var(--secondary-color);
 }
 
+.cdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+  background-color: var(--primary-color-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */
+}
+
+.cdiv h4 {
+  width: 100%;
+  color: aliceblue;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.cdiv input[type="email"] {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background: var(--primary-color-extra-light);
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+.cdiv input::placeholder {
+  color: var(--text-light);
+  opacity: 0.7;
+}
+
+.cdiv button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cdiv button:hover {
+  background-color: var(--secondary-color-dark);
+}
 
 
+/*****************************/
 
 .explore__nav span {
   padding: 0 6px;

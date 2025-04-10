@@ -3,16 +3,15 @@ function toggleMenu() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("contactForm");
-  const confirmation = document.getElementById("confirmationMessage");
+  const contactForm = document.getElementById("contactForm");
+  const contactConfirmation = document.getElementById("confirmationMessage");
+  const newsletterForm = document.getElementById("newsletterForm");
+  const newsletterConfirmation = document.getElementById("newsletterConfirmation");
 
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault(); // Prevent default submission
-
-    const formData = new FormData(form);
-
-    // Add your Web3Forms Access Key here (if not already added as a hidden input)
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+  // Contact Form Submit
+  contactForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const formData = new FormData(contactForm);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -21,21 +20,50 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       if (response.ok) {
-        form.reset();
-        confirmation.textContent = "Thank you! Your message has been sent successfully.";
-        confirmation.style.color = "green";
-        confirmation.style.display = "block";
+        contactForm.reset();
+        contactConfirmation.textContent = "Thank you! Your message has been sent successfully.";
+        contactConfirmation.style.color = "green";
+        contactConfirmation.style.display = "block";
       } else {
         throw new Error("Submission failed.");
       }
     } catch (error) {
-      confirmation.textContent = "Oops! Something went wrong.";
-      confirmation.style.color = "red";
-      confirmation.style.display = "block";
+      contactConfirmation.textContent = "Oops! Something went wrong.";
+      contactConfirmation.style.color = "red";
+      contactConfirmation.style.display = "block";
     }
 
     setTimeout(() => {
-      confirmation.style.display = "none";
+      contactConfirmation.style.display = "none";
+    }, 5000);
+  });
+
+  // Newsletter Submit
+  newsletterForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const formData = new FormData(newsletterForm);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      if (response.ok) {
+        newsletterForm.reset();
+        newsletterConfirmation.textContent = "Thank you! We'll keep you posted.";
+        newsletterConfirmation.style.display = "block";
+      } else {
+        throw new Error("Submission failed.");
+      }
+    } catch (error) {
+      newsletterConfirmation.textContent = "Something went wrong. Try again!";
+      newsletterConfirmation.style.color = "red";
+      newsletterConfirmation.style.display = "block";
+    }
+
+    setTimeout(() => {
+      newsletterConfirmation.style.display = "none";
     }, 5000);
   });
 });

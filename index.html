@@ -130,7 +130,7 @@ Benefits:
       <div class="price__card__content">
         <!-- You can add any card content here -->
         <p style="color: white; margin-bottom: 1rem;">Vegan Protein Shot</p>
-        <p style="color: white;">Price: $25</p>
+        <p style="color: white;">Price: ₹725</p>
       </div>
       <button class="btn price__btn">Buy Now</button>
     </div>
@@ -155,7 +155,7 @@ Benefits:
       <div class="price__card__content">
         <!-- You can add any card content here -->
         <p style="color: white; margin-bottom: 1rem;">Non-Vegan Protein Shot</p>
-        <p style="color: white;">Price: $30</p>
+        <p style="color: white;">Price: ₹500</p>
       </div>
       <button class="btn price__btn">Buy Now</button>
     </div>
@@ -228,11 +228,21 @@ Benefits:
 
 <section class="contact__container" id="contact">
   
-  <form class="cdiv input-group mb-4">
+  <form class="cdiv input-group mb-4" id="newsletterForm">
     <h4 style="width:100%; margin-bottom:20px; color:aliceblue">Be the first to know when we launch</h4>
-    <input type="email" class=" form-control" placeholder="Your Email Address" aria-label="Your Email Address" aria-describedby="button-addon2">
+  
+    <input type="hidden" name="access_key" value="2100ec63-e23e-49f8-8066-605aeb67c458">
+    <input type="email" class="form-control" name="email" placeholder="Your Email Address" required>
+    
     <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Submit</button>
+  
+    <!-- Move confirmation message here -->
+    <div id="newsletterConfirmation" style="display:none; color:lightgreen; margin-top:6px; font-size: 14px; width: 100%; text-align: center;">
+      Thank you! We'll keep you posted.
+    </div>
   </form>
+  
+
 
   <h2 class="section__header">Get In Touch</h2>
   <p class="section__subheader">Have questions or need more information? Reach out to us anytime!</p>
@@ -250,7 +260,7 @@ Benefits:
   
 
   <!-- Confirmation Message -->
-  <div id="confirmationMessage" style="display: none; color: green; margin-top: 10px;">
+  <div id="confirmationMessage" style="display: none; color:lightgreen; margin-top:6px; font-size: 14px; width: 100%; text-align: center;">
     Thank you! Your message has been sent successfully.
   </div>
 
