@@ -1178,49 +1178,5 @@ nav {
   transform: scale(1.1);
 }
 /* new code for price card mob responsive  */
-@media (max-width: 768px) {
-  .price__container {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem 1rem;
-  }
-
-  .price__container > div {
-    flex: 1 1 100% !important;
-    text-align: center;
-  }
-
-  .price__card {
-    width: 100%;
-    max-width: 280px;
-  }
-
-  .section__header {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .section__subheader {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  .btn.price__btn {
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 1rem;
-    background-color: var(--secondary-color);
-    color: var(--white);
-    border: none;
-    border-radius: 5px;
-    margin-top: 1rem;
-    cursor: pointer;
-  }
-
-  .btn.price__btn:hover {
-    background-color: var(--secondary-color-dark);
-  }
-}
 
 
