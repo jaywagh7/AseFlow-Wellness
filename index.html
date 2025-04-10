@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="/index.js"></script>
+    
     <link rel="stylesheet" href="style.css" />
     <title>Aseflow Wellness</title>
   </head>
@@ -311,31 +312,8 @@ Benefits:
    title="Chat with us on WhatsApp">
    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp">
 </a>
-<script>
-  const form = document.getElementById('contactForm');
-  const confirmationMessage = document.getElementById('confirmationMessage');
 
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-    
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
-
-    if (response.ok) {
-      confirmationMessage.style.display = "block";
-      form.reset();
-    } else {
-      confirmationMessage.innerText = "Oops! Something went wrong.";
-      confirmationMessage.style.color = "red";
-      confirmationMessage.style.display = "block";
-    }
-  });
-</script>
-
+<script src="//code.tidio.co/gnirukqefxhsvethg9hhb2igoznoqgst.js" async></script>
   </body>
 </html>
 
